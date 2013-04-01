@@ -1,7 +1,8 @@
 class subversion {
 
   package { 'subversion':
-    ensure => present
+    ensure => present,
+    require => Exec['apt-get update']
   }
 
 }

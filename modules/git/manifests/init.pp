@@ -1,7 +1,8 @@
 class git {
 
   package { 'git':
-    ensure => present
+    ensure => present,
+    require => Exec['apt-get update']
   }
 
   package { 'git-doc':

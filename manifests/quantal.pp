@@ -14,10 +14,10 @@ class quantal {
   include subversion
 
   include rubygems
-
+  include php5
   include lighttpd
   include mysql
   include postgres
-  include adminer
+  include adminer::lighttp
 }
 include quantal

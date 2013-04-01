@@ -3,11 +3,13 @@ class postgres {
   $password = "root"
 
   package { 'postgresql-9.1':
-    ensure => present
+    ensure => present,
+    require => Exec['apt-get update']
   }
 
   package { 'libpq-dev':
-    ensure => present
+    ensure => present,
+    require => Exec['apt-get update']
   }
 
   service { 'postgresql':
@@ -17,7 +19,7 @@ class postgres {
 
   # Create database user if it doesn't already exist
   exec { 'create_db_user':
-    command => "sudo -u postgres createuser -D -l -S -R $username",
+    command => "sudo -u postgres createuser -D -l -S -r $username && sudo -u postgres psql -tAc \"ALTER USER $username WITH ENCRYPTED PASSWORD '$password'\"",
     unless  => "sudo -u postgres psql -tAc \"SELECT 1 FROM pg_roles WHERE rolname='$username'\" | grep -q 1",
     require => Service['postgresql'],
   }

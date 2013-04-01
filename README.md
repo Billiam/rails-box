@@ -6,5 +6,5 @@ Ubuntu 12.10-based box
 
  * mysql
  * postgres
- * lighttpd (not configured)
+ * lighttpd
  * adminer
