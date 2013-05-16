@@ -11,7 +11,7 @@ Vagrant::Config.run do |config|
 
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
-  config.vm.box_url = "http://s.dropcanvas.com/download/x4q5k/2/kbgaxmfccdn8u2u0"
+  config.vm.box_url = "https://googledrive.com/host/0BxqAzjeF5EdJcTN3WHVFWkI4M0k/quantal.box"
 
   # Boot with a GUI so you can see the screen. (Default is headless)
   # config.vm.boot_mode = :gui
