@@ -19,5 +19,7 @@ class quantal {
   include mysql
   include postgres
   include adminer::lighttp
+
+  include site_tmux
 }
 include quantal

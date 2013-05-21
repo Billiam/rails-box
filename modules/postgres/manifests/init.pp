@@ -19,7 +19,7 @@ class postgres {
 
   # Create database user if it doesn't already exist
   exec { 'create_db_user':
-    command => "sudo -u postgres createuser -D -l -S -r $username && sudo -u postgres psql -tAc \"ALTER USER $username WITH ENCRYPTED PASSWORD '$password'\"",
+    command => "sudo -u postgres createuser -d -l -S -r $username && sudo -u postgres psql -tAc \"ALTER USER $username WITH ENCRYPTED PASSWORD '$password'\"",
     unless  => "sudo -u postgres psql -tAc \"SELECT 1 FROM pg_roles WHERE rolname='$username'\" | grep -q 1",
     require => Service['postgresql'],
   }
