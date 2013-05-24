@@ -7,3 +7,6 @@
 [submodule "modules/editfile"]
 	path = modules/editfile
 	url = https://github.com/mstrauss/puppet-editfile.git
+[submodule "modules/stdlib"]
+	path = modules/stdlib
+	url = https://github.com/puppetlabs/puppetlabs-stdlib
