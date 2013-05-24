@@ -12,9 +12,16 @@ class postgres {
     require => Exec['apt-get update']
   }
 
+  exec { 'utf8 postgres':
+    command => 'pg_dropcluster --stop 9.1 main ; pg_createcluster --start --locale en_US.UTF-8 9.1 main',
+    unless  => 'sudo -u postgres psql -t -c "\l" | grep template1 | grep -q UTF',
+    require => Package['postgresql-9.1'],
+    path    => ['/bin', '/sbin', '/usr/bin', '/usr/sbin'],
+  }
+
   service { 'postgresql':
     ensure => running,
-    require => Package['postgresql-9.1', 'libpq-dev']
+    require => Exec['utf8 postgres']
   }
 
   # Create database user if it doesn't already exist
