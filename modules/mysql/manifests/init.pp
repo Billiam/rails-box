@@ -10,6 +10,21 @@ class mysql
             require => Exec['apt-get update']
     }
 
+    package
+    {
+        "libmysql-ruby":
+            ensure  => present,
+            require => Exec['apt-get update']
+    }
+
+    package
+    {
+        "libmysqlclient-dev":
+            ensure  => present,
+            require => Exec['apt-get update']
+        
+    }
+
     service 
     { 
         "mysql":
