@@ -22,5 +22,6 @@ class quantal {
 
   include nodejs
   include site_tmux
+  include site_bash
 }
 include quantal
