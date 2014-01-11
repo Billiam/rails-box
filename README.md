@@ -8,3 +8,5 @@ Ubuntu 12.10-based box
  * postgres
  * lighttpd
  * adminer
+ * chruby
+ * prax

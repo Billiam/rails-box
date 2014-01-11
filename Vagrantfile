@@ -60,5 +60,9 @@ Vagrant::Config.run do |config|
    puppet.module_path = "modules"
    puppet.manifest_file  = "quantal.pp"
  end
-
+ 
+ config.vm.customize [
+   "modifyvm", :id,
+   "--memory", "1024"
+ ]
 end
