@@ -20,7 +20,8 @@ class quantal {
   include postgres
   include adminer::lighttp
   include sqlite3
-  
+  include prax
+
   include nodejs
   include site_tmux
   include site_bash

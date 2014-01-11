@@ -16,3 +16,6 @@
 [submodule "modules/tmux"]
 	path = modules/tmux
 	url = https://github.com/duritong/puppet-tmux.git
+[submodule "modules/vcsrepo"]
+	path = modules/vcsrepo
+	url = https://github.com/puppetlabs/puppetlabs-vcsrepo
