@@ -49,9 +49,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provider :virtualbox do |vb|
     # Don't boot with headless mode
     # vb.gui = true
-    
+
     # Use VBoxManage to customize the VM. For example to change memory:
     vb.memory = 1024
+    
+    vb.customize ["modifyvm", :id, "--natdnsproxy1", "off"]
+    vb.customize ["modifyvm", :id, "--natdnshostresolver1", "off"] 
   end
   # Enable provisioning with Puppet stand alone.  Puppet manifests
   # are contained in a directory path relative to this Vagrantfile.
@@ -72,9 +75,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # # }
   #
 
- config.vm.provision :puppet do |puppet|
-   puppet.manifests_path = "manifests"
-   puppet.module_path = "modules"
-   puppet.manifest_file  = "quantal.pp"
- end
+  config.vm.provision :puppet do |puppet|
+    puppet.manifests_path = "manifests"
+    puppet.module_path = "modules"
+    puppet.manifest_file  = "quantal.pp"
+  end
 end
