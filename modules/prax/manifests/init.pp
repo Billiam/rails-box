@@ -1,14 +1,16 @@
 class prax {
-  vcsrepo { "/home/vagrant/prax":
+  vcsrepo { "/opt/prax":
     ensure => present,
     provider => git,
-    source => "https://github.com/ysbaddaden/prax.git"
+    source => "https://github.com/ysbaddaden/prax.git",
+    revision => "unstable"
   }
   
-  file { '/etc/init.d/prax':
-    source => "/home/vagrant/prax/install/initd",
-    mode => 'ug+x',
-    require => [Vcsrepo['/home/vagrant/prax']],
+  exec { "install-prax":
+    cwd => "/opt/prax",
+    creates => "/etc/init.d/prax",
+    command => "sudo bin/prax install",
+    require => [Vcsrepo['/opt/prax']],
   }
 
   service { 'prax':
@@ -16,7 +18,7 @@ class prax {
     enable => true,
     hasrestart => true,
     hasstatus => false,
-    require => [File['/etc/init.d/prax']],
+    require => [Exec["install-prax"]],
   }
   
   file { "/home/vagrant/.prax":
