@@ -1,0 +1,21 @@
+forge 'https://forge.puppetlabs.com'
+
+mod 'puppetlabs/apt'
+mod 'puppetlabs/nodejs'
+mod 'puppetlabs/sqlite'
+
+mod 'mstrauss/editfile',    git: 'https://github.com/mstrauss/puppet-editfile'
+mod 'duritong/tmux', git: 'https://github.com/duritong/puppet-tmux'
+
+mod 'billiam/adminer',    path: 'private/adminer'
+mod 'billiam/git',        path: 'private/git'
+mod 'billiam/lighttpd',   path: 'private/lighttpd'
+mod 'billiam/mysql',      path: 'private/mysql'
+mod 'billiam/php5',       path: 'private/php5'
+mod 'billiam/postgres',   path: 'private/postgres'
+mod 'billiam/prax',       path: 'private/prax'
+mod 'billiam/rubygems',   path: 'private/rubygems'
+mod 'billiam/site_bash',  path: 'private/site_bash'
+mod 'billiam/site_tmux',  path: 'private/site_tmux'
+mod 'billiam/sqlite3',    path: 'private/sqlite3'
+mod 'billiam/subversion', path: 'private/subversion'

@@ -1,0 +1,110 @@
+FORGE
+  remote: http://forge.puppetlabs.com
+  specs:
+    puppetlabs/vcsrepo (0.2.0)
+
+FORGE
+  remote: https://forge.puppetlabs.com
+  specs:
+    puppetlabs/apt (1.4.2)
+      puppetlabs/stdlib (>= 2.2.1)
+    puppetlabs/nodejs (0.4.0)
+      puppetlabs/apt (>= 0.0.3)
+      puppetlabs/stdlib (>= 2.0.0)
+    puppetlabs/sqlite (0.0.1)
+    puppetlabs/stdlib (4.2.1)
+
+GIT
+  remote: https://github.com/duritong/puppet-tmux
+  ref: master
+  sha: 9b1a4e4b968bb1b5a4f0b7043a9c2802277056ff
+  specs:
+    duritong/tmux (0.0.1)
+
+GIT
+  remote: https://github.com/mstrauss/puppet-editfile
+  ref: master
+  sha: 884efdc0997af667f24625e696630e6b1db5a952
+  specs:
+    mstrauss/editfile (0.0.1)
+
+PATH
+  remote: private/adminer
+  specs:
+    billiam/adminer (0.0.1)
+
+PATH
+  remote: private/git
+  specs:
+    billiam/git (0.0.1)
+
+PATH
+  remote: private/lighttpd
+  specs:
+    billiam/lighttpd (0.0.1)
+
+PATH
+  remote: private/mysql
+  specs:
+    billiam/mysql (0.0.1)
+
+PATH
+  remote: private/php5
+  specs:
+    billiam/php5 (0.0.1)
+
+PATH
+  remote: private/postgres
+  specs:
+    billiam/postgres (0.0.1)
+
+PATH
+  remote: private/prax
+  specs:
+    billiam/prax (0.0.1)
+      puppetlabs/vcsrepo (>= 0)
+
+PATH
+  remote: private/rubygems
+  specs:
+    billiam/rubygems (0.0.1)
+
+PATH
+  remote: private/site_bash
+  specs:
+    billiam/site_bash (0.0.1)
+
+PATH
+  remote: private/site_tmux
+  specs:
+    billiam/site_tmux (0.0.1)
+
+PATH
+  remote: private/sqlite3
+  specs:
+    billiam/sqlite3 (0.0.1)
+
+PATH
+  remote: private/subversion
+  specs:
+    billiam/subversion (0.0.1)
+
+DEPENDENCIES
+  billiam/adminer (>= 0)
+  billiam/git (>= 0)
+  billiam/lighttpd (>= 0)
+  billiam/mysql (>= 0)
+  billiam/php5 (>= 0)
+  billiam/postgres (>= 0)
+  billiam/prax (>= 0)
+  billiam/rubygems (>= 0)
+  billiam/site_bash (>= 0)
+  billiam/site_tmux (>= 0)
+  billiam/sqlite3 (>= 0)
+  billiam/subversion (>= 0)
+  duritong/tmux (>= 0)
+  mstrauss/editfile (>= 0)
+  puppetlabs/apt (>= 0)
+  puppetlabs/nodejs (>= 0)
+  puppetlabs/sqlite (>= 0)
+

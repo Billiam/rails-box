@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Directory in which librarian-puppet should manage its modules directory
+PUPPET_DIR='/vagrant/puppet'
+
+source /etc/profile.d/chruby.sh
+chruby 2.1.2
+
+sudo chmod -R ug+rwX $PUPPET_DIR
+
+if [ `gem query --local | grep librarian-puppet | wc -l` e-q 0 ]; then
+  gem install librarian-puppet --no-ri --no-rdoc
+  cd $PUPPET_DIR && librarian-puppet install --clean
+else
+  cd $PUPPET_DIR && librarian-puppet update
+fi
+
+sudo chmod -R ug+rwX $PUPPET_DIR

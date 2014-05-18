@@ -2,7 +2,7 @@
 
 https://github.com/Billiam/vagrant-baseboxes
 
-Ubuntu 12.10-based box
+Ubuntu 14.04-based box
 
  * mysql
  * postgres
