@@ -8,7 +8,7 @@ chruby 2.1.2
 
 sudo chmod -R ug+rwX $PUPPET_DIR
 
-if [ `gem query --local | grep librarian-puppet | wc -l` e-q 0 ]; then
+if [ `gem query --local | grep librarian-puppet | wc -l` -eq 0 ]; then
   gem install librarian-puppet --no-ri --no-rdoc
   cd $PUPPET_DIR && librarian-puppet install --clean
 else
