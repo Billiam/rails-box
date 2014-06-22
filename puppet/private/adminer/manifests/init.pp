@@ -31,5 +31,4 @@ class adminer {
 
     get_plugin{ 'plugin': url => 'https://raw.github.com/vrana/adminer/master/plugins/plugin.php', name => 'plugin' }
     get_plugin{ 'edit-foreign': url => 'https://raw.github.com/vrana/adminer/master/plugins/edit-foreign.php', name => 'edit-foreign' }
-    get_plugin{ 'convention-foreign-keys': url => 'https://gist.github.com/raw/821510/convention-foreign-keys.php', name => 'convention-foreign-keys' }
 }
