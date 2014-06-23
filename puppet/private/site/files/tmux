@@ -5,7 +5,6 @@ setw -g mode-mouse on
 # remap prefix to Control + a
 set -g prefix C-b
 unbind C-a
-#unbind C-b
 bind C-b send-prefix
 
 #set -g mouse-select-window on

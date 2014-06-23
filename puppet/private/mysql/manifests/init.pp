@@ -1,43 +1,31 @@
-class mysql 
-{
-    $mysqlUsername = "root"
-    $mysqlPassword = "root"
- 
-    package 
-    { 
-        "mysql-server":
-            ensure  => present,
-            require => Exec['apt-get update']
-    }
+class mysql {
+  $mysqlUsername = 'root'
+  $mysqlPassword = 'root'
 
-    package
-    {
-        "libmysqlclient-dev":
-            ensure  => present,
-            require => Exec['apt-get update']
-        
-    }
+  package { 'mysql-server':
+    ensure  => present,
+    require => Exec['apt-get update']
+  }
 
-    service 
-    { 
-        "mysql":
-            enable => true,
-            ensure => running,
-            require => Package["mysql-server"],
-    }
+  package { 'libmysqlclient-dev':
+    ensure  => present,
+    require => Exec['apt-get update']
+  }
 
-    exec 
-    { 
-        "set-mysql-password":
-            unless => "mysqladmin -u$mysqlUsername -p$mysqlPassword status",
-            command => "mysqladmin -u$mysqlUsername password $mysqlPassword",
-            require => Service["mysql"],
-    }
+  service {  'mysql':
+    enable => true,
+    ensure => running,
+    require => Package['mysql-server'],
+  }
 
-    file
-    {
-        '/home/vagrant/.my.cnf':
-            content => template("mysql/my.cnf.erb"),
-            require => Exec['set-mysql-password']
-    }
+  exec { 'set-mysql-password':
+    unless => "mysqladmin -u$mysqlUsername -p$mysqlPassword status",
+    command => "mysqladmin -u$mysqlUsername password $mysqlPassword",
+    require => Service['mysql']
+  }
+
+  file { '/home/vagrant/.my.cnf':
+    content => template('mysql/my.cnf.erb'),
+    require => Exec['set-mysql-password']
+  }
 }

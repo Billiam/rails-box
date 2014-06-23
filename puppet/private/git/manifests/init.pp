@@ -1,5 +1,4 @@
 class git {
-
   package { 'git':
     ensure => present,
     require => Exec['apt-get update']
@@ -16,5 +15,4 @@ class git {
   package { 'git-svn':
     ensure => present
   }
-
 }
