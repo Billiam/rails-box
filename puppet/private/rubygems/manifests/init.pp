@@ -11,4 +11,8 @@ class rubygems {
     provider => 'gem',
     ensure => installed,
   }
+  file { '/home/vagrant/.irbrc':
+    ensure => present,
+    source => 'puppet:///modules/rubygems/irbrc',
+  }
 }
