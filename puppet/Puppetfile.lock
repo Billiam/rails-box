@@ -72,6 +72,7 @@ PATH
     billiam/site (0.0.1)
       duritong/tmux (>= 0)
       emyl/vagrant (>= 0)
+      puppetlabs/stdlib (>= 0)
 
 PATH
   remote: private/sqlite3
