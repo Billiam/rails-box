@@ -18,5 +18,4 @@ node 'rails.dev' {
   include nodejs
   include site::tmux
   include site::bash
-  include site::vagrant
 }
