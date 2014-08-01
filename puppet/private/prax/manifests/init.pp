@@ -3,7 +3,7 @@ class prax {
     ensure => present,
     provider => git,
     source => "https://github.com/ysbaddaden/prax.git",
-    revision => "unstable"
+    revision => "v0.1.0"
   }
   
   exec { "install-prax":
